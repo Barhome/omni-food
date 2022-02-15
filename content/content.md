@@ -126,3 +126,21 @@ Careers
 Recipe directory
 Help center
 Privacy & terms
+
+######
+
+## Sections
+
+### Planning and Thinking of the order of the sections
+
+I planned the project based on the content I have got and the following sections will be represented in my project:
+
+- Logo + Navigation
+- Hero Section
+- Featured in
+- How it works
+- Meals (and list of diets)
+- Testimonials + Gallery
+- Pricing + Features
+- Call to Action
+- Footer
