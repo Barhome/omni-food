@@ -77,8 +77,8 @@ body {
   row-gap: 9.6rem;
 }
 
-.grid:not:last-child {
-  margin-bottom: 9.6;
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
 }
 .grid--2-cols {
   grid-template-columns: repeat(2, 1fr);
@@ -185,6 +185,8 @@ body {
   border-bottom: 1px solid transparent;
 }
 
+/* helper classes */
+
 .list {
   list-style: none;
   display: flex;
@@ -209,7 +211,7 @@ body {
 }
 
 .margin-bottom-md {
-  margin-bottom: 4.8rem;
+  margin-bottom: 4.8rem !important;
 }
 strong {
   font-weight: 500;
