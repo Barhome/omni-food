@@ -58,6 +58,7 @@ html {
   /* this makes 1rem=10px when the browser default fontsize is 16px and in the rest of the project we don't use px to define font-sizes as this will not adjust to the user's fontsize setting in the browsers and also not to the user's zoom level*/
   /* 10/16=0.625 */
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
@@ -65,6 +66,7 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #555;
+  overflow-x: hidden;
 }
 
 /************************************/
