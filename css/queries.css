@@ -1,0 +1,117 @@
+/* rem and em do NOT depend on html font-size in media queries instead in media queries 1rem=1em=16px(the default font size in browser setting) 
+we use em in Media Quries to avoid Bugs in some browsers that appears when we use rem in defining a Media Query */
+
+/************************************/
+/* Below 1344px(Smaller desktop) */
+/************************************/
+/* 1344/16=84em */
+
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/************************************/
+/* Below 1200px (Landscape Tablets) */
+/************************************/
+
+@media (max-width: 75em) {
+  /* using the trick of responsive units */
+  html {
+    /* 9/16=0.5625 using 1rem=9px to minimize the fonts */
+    font-size: 56.25%;
+  }
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+
+  .header {
+    padding: 0 3.2rem;
+  }
+
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+  .hero {
+    gap: 4.8rem;
+  }
+}
+
+/************************************/
+/* Below 940px (Tablets) */
+/************************************/
+
+@media (max-width: 59em) {
+  /* 8/16=0.5=50% */
+  html {
+    font-size: 50%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .hero-text-box,
+  .hero-img-box {
+    text-align: center;
+  }
+  .hero-img {
+    width: 60%;
+  }
+
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .logos img {
+    height: 2.4rem;
+  }
+
+  .step-number {
+    font-size: 7.4rem;
+  }
+
+  .meal-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+  .testimonial-container {
+    padding: 4.2rem;
+  }
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn--form {
+    margin-top: 2.4rem;
+  }
+
+  .footer-nav {
+    font-size: 1.4rem;
+  }
+}

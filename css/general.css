@@ -20,6 +20,7 @@ Default: 1
 Small: 1.05
 Medium: 1.2
 Paragraph Default: 1.6 
+large:1.8
 
 - Letter spacing 
 -0.5px / 0.75px 
@@ -29,12 +30,15 @@ Paragraph Default: 1.6
 --- 02 COLORS
 - Primary: #e67e22
 - Tints: #fdf2e9 #fae5d3
-- Shades: #cf711f
+- Shades: #cf711f #45260a
 - Accents:
-- Greys: #555  #333 #6F6f6f(lightest grey allowed on #fdf2e9)
+- Greys: #888 #767676(lightest grey allowed on #FFF)  #6f6f6f #555  #333 #6F6f6f (lightest grey allowed on #fdf2e9)
 
 
 --- 03 SHADOWS
+
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075) with different values when necessary 
+
 
 --- 04 BORDER-RADIUS
 Defualt: 9px
@@ -51,6 +55,8 @@ Defualt: 9px
   box-sizing: border-box;
 }
 html {
+  /* this makes 1rem=10px when the browser default fontsize is 16px and in the rest of the project we don't use px to define font-sizes as this will not adjust to the user's fontsize setting in the browsers and also not to the user's zoom level*/
+  /* 10/16=0.625 */
   font-size: 62.5%;
 }
 
@@ -91,6 +97,9 @@ body {
 .grid--4-cols {
   grid-template-columns: repeat(4, 1fr);
 }
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
 
 .grid--center-v {
   align-items: center;
@@ -130,16 +139,19 @@ body {
   margin-bottom: 1.6rem;
   letter-spacing: 0.75px;
 }
+
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
-  background-color: #e67e22;
-  color: #fff;
   text-decoration: none;
-  font-size: 1.8rem;
-  font-weight: 500;
+  font-size: 2rem;
+  font-weight: 600;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
   transition: all 0.4s;
 }
 
@@ -169,6 +181,17 @@ body {
   box-shadow: inset 0 0 0 1px #fff;
 }
 
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
+}
 .link:link,
 .link:visited {
   display: inline-block;
@@ -199,6 +222,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1.6rem;
+  line-height: 1.2;
 }
 .list-icon {
   width: 3rem;
@@ -206,6 +230,10 @@ body {
   color: #e67e22;
 }
 
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.5rem rgba(231, 126, 35, 0.5);
+}
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }
