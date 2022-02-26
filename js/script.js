@@ -4,6 +4,16 @@ console.log("hello world");
 const year = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
 year.textContent = currentYear;
+
+// make mobile navigation work
+
+const btnMobileNav = document.querySelector(".btn-mobile-nav");
+const headerElement = document.querySelector(".header");
+
+btnMobileNav.addEventListener("click", function () {
+  headerElement.classList.toggle("nav-open");
+});
+
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
