@@ -59,6 +59,9 @@ html {
   /* 10/16=0.625 */
   font-size: 62.5%;
   overflow-x: hidden;
+
+  /* doesn't work on apple devices we have to use JS */
+  /* scroll-behavior: smooth; */
 }
 
 body {

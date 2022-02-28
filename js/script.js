@@ -14,6 +14,39 @@ btnMobileNav.addEventListener("click", function () {
   headerElement.classList.toggle("nav-open");
 });
 
+// implementing smooth scrolling
+
+// scrolling to top when clicking the footer logo
+
+const footerLogo = document.querySelector(".footer-logo");
+footerLogo.addEventListener("click", function (event) {
+  event.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// using propagation
+
+const parentUl = document.querySelector(".main-nav-list");
+
+parentUl.addEventListener("click", function (event) {
+  event.preventDefault();
+  if (event.target.classList.contains("main-nav-link")) {
+    const id = event.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
+});
+
+const parentHero = document.querySelector(".hero-text-box");
+
+parentHero.addEventListener("click", function (event) {
+  event.preventDefault();
+  if (event.target.classList.contains("btn")) {
+    const id = event.target.getAttribute("href");
+    console.log(id);
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
+});
+
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
