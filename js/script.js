@@ -1,5 +1,3 @@
-console.log("hello world");
-
 // updating copyright yearly
 const year = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
@@ -33,6 +31,7 @@ parentUl.addEventListener("click", function (event) {
   if (event.target.classList.contains("main-nav-link")) {
     const id = event.target.getAttribute("href");
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+    headerElement.classList.toggle("nav-open");
   }
 });
 
@@ -46,6 +45,32 @@ parentHero.addEventListener("click", function (event) {
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   }
 });
+
+// Sticky navigation
+
+const sectionHero = document.querySelector(".section-hero");
+const observer = new IntersectionObserver(
+  function (entries) {
+    //entries is an array for each threshold value
+    const ent = entries[0];
+    if (!ent.isIntersecting) {
+      document.body.classList.add("sticky");
+    }
+
+    if (ent.isIntersecting) {
+      document.body.classList.remove("sticky");
+    }
+  },
+  {
+    // root represents where the element should be appearing , setting it to null means that when it start intersecting with the viewport in other words as it moves through the viewport so we are creating an observer to observe another element as it starts intersecting the viewport.
+    root: null,
+    // threshold means that an event will fire as soon as 0% of the observed element is intersecting with the viewport which means that when hero section has 0% is inside of the viewport.
+    threshold: 0,
+    // to fire the event 80px before the hero section leaves the viewport
+    rootMargin: "-80px",
+  }
+);
+observer.observe(sectionHero);
 
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
@@ -61,7 +86,7 @@ function checkFlexGap() {
   document.body.appendChild(flex);
   let isSupported = flex.scrollHeight === 1;
   flex.parentNode.removeChild(flex);
-  console.log(isSupported);
+  //console.log(isSupported);
 
   if (!isSupported) document.body.classList.add("no-flexbox-gap");
 }
